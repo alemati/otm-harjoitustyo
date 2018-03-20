@@ -1,3 +1,60 @@
+dsl-hkibng32-54fb4c-24:otm-harjoitustyo AM$ git log --stat | cat
+commit 6d88ae1d8f05b06efd058ab1cfc2528c77cb3b7a
+Author: Aleksander Matikainen <AM@dsl-hkibng32-54fb48-175.dhcp.inet.fi>
+Date:   Tue Mar 20 14:53:24 2018 +0200
+
+    kj
+
+ README.md | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 8427f123e36d448da74469503f32b969536965a8
+Author: Aleksander <36380548+alemati@users.noreply.github.com>
+Date:   Tue Mar 20 14:50:11 2018 +0200
+
+    Update README.md
+
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eaf9aa4b3e903b4915bc68ceebdb7c40030dd268
+Author: Aleksander <36380548+alemati@users.noreply.github.com>
+Date:   Tue Mar 20 14:50:02 2018 +0200
+
+    Update README.md
+
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c1f74ddbaa35e5a386e87be14521545c67cea8bd
+Author: Aleksander <36380548+alemati@users.noreply.github.com>
+Date:   Tue Mar 20 14:48:41 2018 +0200
+
+    Update README.md
+
+ README.md | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 55f991e622fea03d69284b65d04eb0e1c72178ef
+Author: Aleksander Matikainen <AM@dsl-hkibng32-54fb48-175.dhcp.inet.fi>
+Date:   Tue Mar 20 14:45:13 2018 +0200
+
+    paljon muutoksia
+
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ab5927fa9bb214384c41312abceb25099ec59bc9
+Author: Aleksander Matikainen <AM@dsl-hkibng32-54fb48-175.dhcp.inet.fi>
+Date:   Tue Mar 20 14:44:10 2018 +0200
+
+    paljon muutoksia
+
+ README.md                        |  2 ++
+ laskarit/viikko1/gitlog.txt      |  8 ++++++++
+ laskarit/viikko1/komentorivi.txt | 24 ++++++++++++++++++++++++
+ 3 files changed, 34 insertions(+)
+
 commit e337d5f5f88582c14eea26f68c3f837a5daca103
 Author: Aleksander Matikainen <AM@dsl-hkibng32-54fb48-175.dhcp.inet.fi>
 Date:   Tue Mar 20 14:29:08 2018 +0200

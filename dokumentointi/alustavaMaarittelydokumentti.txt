@@ -2,7 +2,10 @@ Kirjastojärjestelmä
 
 Järjestelmän tarkoitus:
 
-Kirjastojärjestelmän avulla kirjaston työntekijät, joilla on sovelluksen admin-oikeudet, voivat pitää kirjaa kirjastossa olevista kirjoista. Tämän lisäksi järjestelmän avulla kirjaston rekisteröidyt asiakkaat voivat lainata kirjoja omaan käyttöön. Kirjaston työntekijöillä myös tulee olemaan mahdollisuus nähdä kaikki rekisteröidyt asiakkaat ja heidän lainatut kirjat.
+Kirjastojärjestelmän avulla kirjaston työntekijät, joilla on sovelluksen admin-oikeudet, voivat 
+pitää kirjaa kirjastossa olevista kirjoista. Tämän lisäksi järjestelmän avulla kirjaston rekisteröidyt 
+asiakkaat voivat lainata kirjoja omaan käyttöön. Kirjaston työntekijöillä myös tulee olemaan 
+mahdollisuus nähdä kaikki rekisteröidyt asiakkaat ja heidän lainatut kirjat.
 
 Perusversion tarjoama toiminnallisuus:
 -Rekisteröityminen järjestelmään uniikki käyttäjätunnuksen avulla, joka johtaa asiakkaan omalle sivulle.

@@ -19,6 +19,14 @@ Perusversion tarjoama toiminnallisuus:
 Käyttäjät:
 
 On kaksi eri käyttäjä tyyppiä:
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b
 
 *kirjaston työntekijä (admin)  
   *pystyy lisätä kirjastojärjestelmään uusia kirjoja  

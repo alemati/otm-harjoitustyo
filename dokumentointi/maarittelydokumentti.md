@@ -7,7 +7,7 @@ pitää kirjaa kirjastossa olevista kirjoista. Tämän lisäksi järjestelmän a
 asiakkaat voivat lainata kirjoja omaan käyttöön. Kirjaston työntekijöillä myös tulee olemaan 
 mahdollisuus nähdä kaikki rekisteröidyt asiakkaat ja heidän lainatut kirjat.
 
-##Perusversion tarjoama toiminnallisuus:
+## Perusversion tarjoama toiminnallisuus:
 * Rekisteröityminen järjestelmään uniikki käyttäjätunnuksen avulla, joka johtaa asiakkaan omalle sivulle.
 * Asiakas näkee mitä kirjoja hän on lainannut.
 * Halutessa asiakas voi nähdä luettelon lainattavissa olevista kirjoista ja lainata kirjan.

@@ -24,13 +24,13 @@ public class MaksukorttiTest {
     }
     
     @Test
-    public void rahanLataaminenKasvattaaSaldoaOikein() {
+    public void rahanLataaminenKasvattaaSaldoa() {
         kortti.lataaRahaa(1000);
         assertEquals("saldo: 10.10", kortti.toString());
     }
     
     @Test
-    public void saldoVaheneeOikein() {
+    public void saldoVahenee() {
         kortti.otaRahaa(10);
         assertEquals("saldo: 0.0", kortti.toString());
     }

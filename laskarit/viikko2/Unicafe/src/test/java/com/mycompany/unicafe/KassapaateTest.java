@@ -8,6 +8,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ *
+ * @author AM
+ */
+
 public class KassapaateTest {
     
     Kassapaate kassapaate;
@@ -32,7 +37,22 @@ public class KassapaateTest {
     @After
     public void tearDown() {
     }
-
+    
+    @Test
+    public void latausOnnistuu() {
+        Maksukortti kortti = new Maksukortti(0);
+        kassapaate.lataaRahaaKortille(kortti, 1000); 
+        assertEquals(101000, kassapaate.kassassaRahaa());
+        assertEquals(1000, kortti.saldo());
+    }
+    
+    @Test
+    public void latausEiOnnistu() {
+        Maksukortti kortti = new Maksukortti(0);
+        kassapaate.lataaRahaaKortille(kortti, -10);
+        assertEquals(100000, kassapaate.kassassaRahaa());
+        assertEquals(0, kortti.saldo());
+    }
     
     @Test
     public void kassapaateOk() {
@@ -58,7 +78,7 @@ public class KassapaateTest {
     }
     
     @Test
-    public void kateisostoEiRahaaEdullisesti() {
+    public void kateisnostoEiRahaaE() {
         assertEquals(200 ,kassapaate.syoEdullisesti(200));
         assertEquals(100000, kassapaate.kassassaRahaa());
         assertEquals(0, kassapaate.edullisiaLounaitaMyyty()); 
@@ -66,7 +86,7 @@ public class KassapaateTest {
     }
     
     @Test
-    public void kateisostoEiRahaaMaukkaasti() {
+    public void kateisnostoEiRahaaM() {
         assertEquals(100 ,kassapaate.syoMaukkaasti(100));
         assertEquals(100000, kassapaate.kassassaRahaa());
         assertEquals(0, kassapaate.edullisiaLounaitaMyyty()); 
@@ -92,7 +112,7 @@ public class KassapaateTest {
     }
     
     @Test
-    public void korttimaksuEiRahaaEdullisesti() {
+    public void korttimaksuEiRahaaE() {
         Maksukortti kortti = new Maksukortti(0);
         assertFalse(kassapaate.syoEdullisesti(kortti));
         assertEquals(0, kassapaate.edullisiaLounaitaMyyty());
@@ -101,7 +121,7 @@ public class KassapaateTest {
     }
     
     @Test
-    public void korttimaksuEiRahaaMaukkaasti() {
+    public void korttimaksuEiRahaaM() {
         Maksukortti kortti = new Maksukortti(0);
         assertFalse(kassapaate.syoMaukkaasti(kortti));
         assertEquals(0, kassapaate.edullisiaLounaitaMyyty());
@@ -109,20 +129,5 @@ public class KassapaateTest {
         assertEquals(100000, kassapaate.kassassaRahaa());
     }
     
-    @Test
-    public void lataaRahaaKortilleOnnistuu() {
-        Maksukortti kortti = new Maksukortti(0);
-        kassapaate.lataaRahaaKortille(kortti, 1000); 
-        assertEquals(101000, kassapaate.kassassaRahaa());
-        assertEquals(1000, kortti.saldo());
-    }
-    
-    @Test
-    public void lataaRahaaKortilleEiOnnistu() {
-        Maksukortti kortti = new Maksukortti(0);
-        kassapaate.lataaRahaaKortille(kortti, -10);
-        assertEquals(100000, kassapaate.kassassaRahaa());
-        assertEquals(0, kortti.saldo());
-    }
     
 }

@@ -8,6 +8,11 @@ asiakkaat voivat lainata kirjoja omaan käyttöön. Kirjaston työntekijöillä 
 mahdollisuus nähdä kaikki rekisteröidyt asiakkaat ja heidän lainatut kirjat.
 
 Perusversion tarjoama toiminnallisuus:
+* Item 1
+* Item 2
+* Item 2a
+* Item 2b
+* Item 2b
 -Rekisteröityminen järjestelmään uniikki käyttäjätunnuksen avulla, joka johtaa asiakkaan omalle sivulle.
 -Asiakas näkee mitä kirjoja hän on lainannut.
 -Halutessa asiakas voi nähdä luettelon lainattavissa olevista kirjoista ja lainata kirjan.

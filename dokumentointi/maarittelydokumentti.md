@@ -1,6 +1,6 @@
 # Kirjastojärjestelmä
 
-##Järjestelmän tarkoitus:
+## Järjestelmän tarkoitus:
 
 Kirjastojärjestelmän avulla kirjaston työntekijät, joilla on sovelluksen admin-oikeudet, voivat 
 pitää kirjaa kirjastossa olevista kirjoista. Tämän lisäksi järjestelmän avulla kirjaston rekisteröidyt 
@@ -16,7 +16,7 @@ mahdollisuus nähdä kaikki rekisteröidyt asiakkaat ja heidän lainatut kirjat.
 * Kirjaston työntekijä voi poistaa asiakkaan tilin. Tehdessä niin asiakkaan lainassa olevat kirjat jäävät asiakkaalle.
 
 
-##Käyttäjät:
+## Käyttäjät:
 
 On kaksi eri käyttäjä tyyppiä:
 * kirjaston työntekijä (admin)

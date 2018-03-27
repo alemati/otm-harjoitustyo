@@ -19,21 +19,22 @@ Perusversion tarjoama toiminnallisuus:
 Käyttäjät:
 
 On kaksi eri käyttäjä tyyppiä:
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
-* Item 1
-* Item 2
+* kirjaston työntekijä (admin)
+  * pystyy lisätä kirjastojärjestelmään uusia kirjoja
+  * pystyy poista kirjastojärjestelmästä kirjoja
+  * voi nähdä luettelon järjestelmää käyttävistä asiakkaista
+  * voi nähdä mitä kirjoja on asiakkaan lainassa on juuri nyt
+  * voi poistaa asiakkaan tilin 
+* tavallinen kirjaston asiakas  
   * Item 2a
   * Item 2b
 
-*kirjaston työntekijä (admin)  
-  *pystyy lisätä kirjastojärjestelmään uusia kirjoja  
-  *pystyy poista kirjastojärjestelmästä kirjoja  
-  *voi nähdä luettelon järjestelmää käyttävistä asiakkaista  
-  *voi nähdä mitä kirjoja on asiakkaan lainassa on juuri nyt  
-  *voi poistaa asiakkaan tilin  
+* kirjaston työntekijä (admin)  
+  * pystyy lisätä kirjastojärjestelmään uusia kirjoja  
+  * pystyy poista kirjastojärjestelmästä kirjoja  
+  * voi nähdä luettelon järjestelmää käyttävistä asiakkaista  
+  * voi nähdä mitä kirjoja on asiakkaan lainassa on juuri nyt  
+  * voi poistaa asiakkaan tilin  
 
 *tavallinen kirjaston asiakas  
   *voi luoda uniikki tili  

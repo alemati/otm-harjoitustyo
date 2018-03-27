@@ -1,4 +1,4 @@
-# Kirjastojärjestelmä
+# Kirjastojärjestelmän vaativuusmäärittely
 
 ## Järjestelmän tarkoitus:
 

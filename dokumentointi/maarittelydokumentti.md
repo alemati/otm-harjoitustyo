@@ -20,15 +20,15 @@ Käyttäjät:
 
 On kaksi eri käyttäjä tyyppiä:
 
-*kirjaston työntekijä (admin)
-  *pystyy lisätä kirjastojärjestelmään uusia kirjoja
-  *pystyy poista kirjastojärjestelmästä kirjoja
-  *voi nähdä luettelon järjestelmää käyttävistä asiakkaista
-  *voi nähdä mitä kirjoja on asiakkaan lainassa on juuri nyt
-  *voi poistaa asiakkaan tilin
+*kirjaston työntekijä (admin)  
+  *pystyy lisätä kirjastojärjestelmään uusia kirjoja  
+  *pystyy poista kirjastojärjestelmästä kirjoja  
+  *voi nähdä luettelon järjestelmää käyttävistä asiakkaista  
+  *voi nähdä mitä kirjoja on asiakkaan lainassa on juuri nyt  
+  *voi poistaa asiakkaan tilin  
 
-*tavallinen kirjaston asiakas
-  *voi luoda uniikki tili
-  *voi ottaa lainaan kirjoja, jotka eivät ole jonkun muun lainassa
-  *voi palauta omassa lainassa olleita kirjoja
-  *voi nähdä kaikki lainattavissa olevia (vapaita) kirjoja
+*tavallinen kirjaston asiakas  
+  *voi luoda uniikki tili  
+  *voi ottaa lainaan kirjoja, jotka eivät ole jonkun muun lainassa  
+  *voi palauta omassa lainassa olleita kirjoja  
+  *voi nähdä kaikki lainattavissa olevia (vapaita) kirjoja  

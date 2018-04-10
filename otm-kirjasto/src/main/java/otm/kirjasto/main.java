@@ -307,15 +307,15 @@ public class main extends Application {
             mainStage.setScene(createLoginPage());
         });
 
-        Button but2 = new Button("Delete this account");
-        but2.setOnAction(e -> {
-            try {
-                userDao.delete(user.getName());
-                mainStage.setScene(createLoginPage());
-            } catch (SQLException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+//        Button but2 = new Button("Delete this account");
+//        but2.setOnAction(e -> {
+//            try {
+//                userDao.delete(user.getName());
+//                mainStage.setScene(createLoginPage());
+//            } catch (SQLException ex) {
+//                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        });
 
         ListView<Book> lista1 = new ListView<>();
         try {
@@ -359,13 +359,13 @@ public class main extends Application {
 
         });
         VBox buttons = new VBox(8);
-        buttons.getChildren().addAll(but1, but2, but3, but4);
+        buttons.getChildren().addAll(but1, but3, but4);
         VBox vBoxOmatKirjat = new VBox(5);
         VBox vBoxVapaatKirjat = new VBox(5);
         vBoxOmatKirjat.getChildren().addAll(yourBooks, lista2, but4);
         vBoxVapaatKirjat.getChildren().addAll(availabel, lista1, but3);
         hBox.getChildren().addAll(vBoxOmatKirjat, vBoxVapaatKirjat);
-        vBox.getChildren().addAll(welcome, hBox, but1, but2);
+        vBox.getChildren().addAll(welcome, hBox, but1);
         Scene scene = new Scene(vBox, 600, 400);
         return scene;
     }

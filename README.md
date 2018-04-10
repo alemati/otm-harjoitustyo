@@ -7,3 +7,5 @@
 **Viikko 2**  
 [testikattavuus](https://github.com/alemati/otm-harjoitustyo/blob/master/laskarit/viikko2/Unicafe/testikattavuus.png)  
 
+trololo
+

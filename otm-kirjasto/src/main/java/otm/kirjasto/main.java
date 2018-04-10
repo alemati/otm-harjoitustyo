@@ -69,7 +69,6 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-//        program = new Program("tietokanta.db");
         userDao = new UserDao("tietokanta.db");
         bookDao = new BookDao("tietokanta.db");
         mainStage = primaryStage;

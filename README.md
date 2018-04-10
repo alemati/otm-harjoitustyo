@@ -4,6 +4,6 @@
 [Sovellus](https://github.com/alemati/otm-harjoitustyo/tree/master/otm-kirjasto)
 
 **Viikko 3**  
-[Bensatanki ja moottori](https://github.com/alemati/otm-harjoitustyo/blob/master/laskarit/viikko3/machine.png)  
+[Bensatankki ja moottori](https://github.com/alemati/otm-harjoitustyo/blob/master/laskarit/viikko3/machine.png)  
 [Monopolia](https://github.com/alemati/otm-harjoitustyo/blob/master/laskarit/viikko3/monopolia.png) 
 

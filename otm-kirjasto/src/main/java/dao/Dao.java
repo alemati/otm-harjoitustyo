@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package otm.kirjasto;
+package dao;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -11,8 +11,8 @@ import java.sql.*;
 import java.util.*;
 
 public interface Dao<T, K> {
-    T findOne(K key) throws SQLException;
+    T findByUsername(K key) throws SQLException;
     List<T> findAll() throws SQLException;
-    T saveOrUpdate(T object) throws SQLException;
+    T save(T object) throws SQLException;
     void delete(K key) throws SQLException;
 }

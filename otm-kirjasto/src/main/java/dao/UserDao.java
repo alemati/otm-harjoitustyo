@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package otm.kirjasto;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import domain.User;
 
 public class UserDao implements Dao<User, String>{
     
@@ -22,7 +23,7 @@ public class UserDao implements Dao<User, String>{
     }
     
     @Override
-    public User findOne(String key) throws SQLException {
+    public User findByUsername(String key) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM User WHERE name = ?");
         stmt.setObject(1, key);
@@ -54,7 +55,7 @@ public class UserDao implements Dao<User, String>{
     }
 
     @Override
-    public User saveOrUpdate(User object) throws SQLException {
+    public User save(User object) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt
                 = conn.prepareStatement("INSERT INTO User (name, pass) VALUES (?,?)");

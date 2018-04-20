@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package otm.kirjasto;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,6 +12,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import domain.Book;
+import domain.User;
 
 /**
  *
@@ -25,7 +29,7 @@ public class BookDao implements Dao<Book, Integer>{
         this.dataBaseName = dataBaseName;
     }
     
-    public int viimeisenKirjanId() throws SQLException {
+    public int idOfLastBook() throws SQLException {
         List<Book> lista = findAll();
         if(lista.isEmpty()) {
           return -1;  
@@ -34,7 +38,7 @@ public class BookDao implements Dao<Book, Integer>{
     }
     
     @Override
-    public Book findOne(Integer key) throws SQLException {
+    public Book findByUsername(Integer key) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Book WHERE id = ?");
         stmt.setObject(1, key);
@@ -50,7 +54,7 @@ public class BookDao implements Dao<Book, Integer>{
         return palautus;
     }
     
-    public List<Book> findAllVapaat() throws SQLException {
+    public List<Book> findAllFree() throws SQLException {
         List<Book> lista = new ArrayList();
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Book WHERE owner='admin'");
@@ -64,10 +68,20 @@ public class BookDao implements Dao<Book, Integer>{
         rs.close();
         conn.close();
         return lista;
-        
     }
     
-    public ArrayList<Book> findAllWhere(User user) throws SQLException {
+    public List<Book> findAllBorrowed() throws SQLException {
+        List<Book> lista = findAll();
+        List<Book> list = new ArrayList<>();
+        lista.stream().forEach(k -> {
+            if(!k.getOmistaja().equals("admin")) {
+                list.add(k);
+            }
+        });
+        return list;
+    }
+    
+    public ArrayList<Book> findAllWhichBelongsTo(User user) throws SQLException {
         ArrayList<Book> lista = new ArrayList();
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Book WHERE owner=?");
@@ -82,7 +96,16 @@ public class BookDao implements Dao<Book, Integer>{
         rs.close();
         conn.close();
         return lista;
-        
+    }
+    
+    public long howManyFreeCopiesOf(Book book) {
+        List all = new ArrayList();
+        try {
+            all = findAllFree();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return all.stream().filter(k -> k.equals(book)).count();
     }
     
     @Override
@@ -104,7 +127,7 @@ public class BookDao implements Dao<Book, Integer>{
     }
 
     @Override
-    public Book saveOrUpdate(Book uusiKirja) throws SQLException {
+    public Book save(Book uusiKirja) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt
                 = conn.prepareStatement("INSERT INTO Book (name, writer, year, owner) VALUES (?,?,?,?)");
@@ -128,7 +151,7 @@ public class BookDao implements Dao<Book, Integer>{
         conn.close();
     }
     
-    public void vaihdaOmistaja(Book book, User user) throws SQLException {
+    public void changeOwner(Book book, User user) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("UPDATE Book SET owner=? WHERE id=?");
         stmt.setString(1, user.getName());
@@ -138,7 +161,7 @@ public class BookDao implements Dao<Book, Integer>{
         conn.close();
     }
     
-    public void palauttaaKirja(Book book) throws SQLException {
+    public void returnBook(Book book) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("UPDATE Book SET owner='admin' WHERE id=?");
         stmt.setInt(1, book.getId());

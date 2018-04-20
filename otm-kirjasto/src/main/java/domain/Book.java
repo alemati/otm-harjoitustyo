@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package otm.kirjasto;
+package domain;
 
 import java.util.Objects;
 
@@ -13,18 +13,26 @@ public class Book implements Comparable<Book>  {
     private int year;
     private int id;
     private String owner;
+    private int copies;
     public Book(int id, String nimi, String kirjailija, int vuosi) {
         this.id = id;
         this.name = nimi;
         this.writer = kirjailija;
         this.year = vuosi;
         this.owner = "admin";
+        this.copies = 0;
     }
     public void setOmistajaAdmin() {
         this.owner = "admin";
     }
     public void setOmistaja(String tulevaOmistaja) {
         this.owner = tulevaOmistaja;
+    }
+    public void setCopies(int l) {
+        this.copies  = l;
+    }
+    public int getCopies(int l) {
+        return this.copies;
     }
     public String getOmistaja(){
         return this.owner;
@@ -43,9 +51,12 @@ public class Book implements Comparable<Book>  {
     }
     public String toString() {
         if(this.owner.equals("admin")) {
-           return this.name + ", " + this.writer + ", " + this.year + ", the book is free";  
+           return this.name + ", " + this.writer + ", " + this.year;  
         } 
-        return this.name + ", " + this.writer + ", " + this.year + ", this book has already been borrowed, owner: " + this.owner;
+        return this.name + ", " + this.writer + ", " + this.year;
+    }
+    public String toStringFree() {
+        return this.name + ", " + this.writer + ", " + this.year + ", " + this.copies + " copies available";
     }
 
     @Override

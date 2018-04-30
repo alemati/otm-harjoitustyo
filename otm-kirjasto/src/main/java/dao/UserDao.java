@@ -57,6 +57,12 @@ public class UserDao implements Dao<User, String>{
     @Override
     public User save(User object) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
+        List<User> list = findAll();
+        for (User user : list) {
+            if(user.getName().equals(object.getName())) {
+                return null;
+            }
+        }
         PreparedStatement stmt
                 = conn.prepareStatement("INSERT INTO User (name, pass) VALUES (?,?)");
         stmt.setString(1, object.getName());
@@ -72,6 +78,14 @@ public class UserDao implements Dao<User, String>{
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("DELETE FROM User WHERE name = ?");
         stmt.setString(1, key);
+        stmt.executeUpdate();
+        stmt.close();
+        conn.close();
+    }
+    
+    public void deleteAll() throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
+        PreparedStatement stmt = conn.prepareStatement("DELETE FROM User");
         stmt.executeUpdate();
         stmt.close();
         conn.close();

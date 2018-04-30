@@ -59,11 +59,11 @@ public class Book implements Comparable<Book>  {
         return this.name + ", " + this.writer + ", " + this.year + ", " + this.copies + " copies available";
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        return hash;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 7;
+//        return hash;
+//    }
 
     @Override
     public boolean equals(Object obj) {
@@ -93,4 +93,7 @@ public class Book implements Comparable<Book>  {
     public int compareTo(Book o) {
     return 0;
     }
+    
+    
+    
 }

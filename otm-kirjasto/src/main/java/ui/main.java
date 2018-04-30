@@ -1,11 +1,9 @@
 package ui;
 
 import domain.User;
-import domain.ConfirmBox;
 import domain.Book;
 import dao.BookDao;
 import dao.UserDao;
-import domain.AlertBox;
 import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.io.File;
 import java.sql.SQLException;
@@ -78,15 +76,15 @@ public class main extends Application {
             String name = unInput.getText();
             String pass = pwInput.getText();
             User user = new User(name, pass);
-            User onko = null;
+            User resultFromDB = null;
             try {
-                onko = userDao.findByUsername(name);
+                resultFromDB = userDao.findByUsername(name);
             } catch (SQLException ex) {
                 Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if (onko != null && pass.equals(onko.getPass()) && name.equals("admin")) {
+            if (resultFromDB != null && pass.equals(resultFromDB.getPass()) && name.equals("admin")) {
                 mainStage.setScene(createAdminPage(user));
-            } else if (onko != null && pass.equals(onko.getPass()) && !name.equals("admin")) {
+            } else if (resultFromDB != null && pass.equals(resultFromDB.getPass()) && !name.equals("admin")) {
                 mainStage.setScene(createUserPage(user));
             }
             errorMessage.setText("Username and/or password invalid(s).");

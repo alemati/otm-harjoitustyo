@@ -98,18 +98,17 @@ public class BookDao implements Dao<Book, Integer>{
         return lista;
     }
     
-    public long howManyFreeCopiesOf(Book book) {
-        List all = new ArrayList();
-        try {
-            all = findAllFree();
-        } catch (SQLException ex) {
-            Logger.getLogger(BookDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return all.stream().filter(k -> k.equals(book)).count();
-    }
+//    public long howManyFreeCopiesOf(Book book) {
+//        List all = new ArrayList();
+//        try {
+//            all = findAllFree();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(BookDao.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        return all.stream().filter(k -> k.equals(book)).count();
+//    }
     
     @Override
-    
     public ArrayList<Book> findAll() throws SQLException {
         ArrayList<Book> lista = new ArrayList();
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
@@ -129,6 +128,12 @@ public class BookDao implements Dao<Book, Integer>{
     @Override
     public Book save(Book uusiKirja) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
+        List<Book> list = findAll();
+        for (Book book : list) {
+            if(book.equals(uusiKirja)) {
+                return null;
+            }
+        }
         PreparedStatement stmt
                 = conn.prepareStatement("INSERT INTO Book (name, writer, year, owner) VALUES (?,?,?,?)");
         stmt.setString(1, uusiKirja.getNimi());
@@ -165,6 +170,14 @@ public class BookDao implements Dao<Book, Integer>{
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("UPDATE Book SET owner='admin' WHERE id=?");
         stmt.setInt(1, book.getId());
+        stmt.executeUpdate();
+        stmt.close();
+        conn.close();
+    }
+    
+    public void deleteAll() throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
+        PreparedStatement stmt = conn.prepareStatement("DELETE FROM Book");
         stmt.executeUpdate();
         stmt.close();
         conn.close();

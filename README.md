@@ -1,9 +1,6 @@
-**Harjoitustyö**  
-[työaikakirjanpito](https://github.com/alemati/otm-harjoitustyo/blob/master/ty%C3%B6aikakirjanpito.md)    
+#Kirjasto sovellus 
+[Käyttöohje](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/k%C3%A4ytt%C3%B6ohje.md)    
 [Määrittelydokumentti](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)    
-[Sovellus](https://github.com/alemati/otm-harjoitustyo/tree/master/otm-kirjasto)
+[Release](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1)  
 
-**Viikko 3**  
-[Bensatankki ja moottori](https://github.com/alemati/otm-harjoitustyo/blob/master/laskarit/viikko3/machine.png)  
-[Monopolia](https://github.com/alemati/otm-harjoitustyo/blob/master/laskarit/viikko3/monopolia.png) 
 

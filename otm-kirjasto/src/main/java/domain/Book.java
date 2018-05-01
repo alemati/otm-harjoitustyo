@@ -7,14 +7,16 @@ package domain;
 
 import java.util.Objects;
 
-public class Book implements Comparable<Book>  {
+public class Book implements Comparable<Book> { 
+
     private String name;
     private String writer;
     private int year;
     private int id;
     private String owner;
     private int copies;
-    public Book(int id, String nimi, String kirjailija, int vuosi) {
+
+    public Book(int id, String nimi, String kirjailija, int vuosi) { 
         this.id = id;
         this.name = nimi;
         this.writer = kirjailija;
@@ -22,40 +24,51 @@ public class Book implements Comparable<Book>  {
         this.owner = "admin";
         this.copies = 0;
     }
-    public void setOmistajaAdmin() {
+
+    public void setOmistajaAdmin() { 
         this.owner = "admin";
     }
-    public void setOmistaja(String tulevaOmistaja) {
+
+    public void setOmistaja(String tulevaOmistaja) { 
         this.owner = tulevaOmistaja;
     }
-    public void setCopies(int l) {
-        this.copies  = l;
+
+    public void setCopies(int l) { 
+        this.copies = l;
     }
-    public int getCopies(int l) {
+
+    public int getCopies(int l) { 
         return this.copies;
     }
-    public String getOmistaja(){
+
+    public String getOmistaja() { 
         return this.owner;
     }
-    public int getId(){
+
+    public int getId() { 
         return this.id;
     }
-    public String getNimi(){
+
+    public String getNimi() {
         return this.name;
     }
-    public String getKirjailija(){
+
+    public String getKirjailija() {
         return this.writer;
     }
-    public int getVuosi(){
+
+    public int getVuosi() {
         return this.year;
     }
+
     public String toString() {
-        if(this.owner.equals("admin")) {
-           return this.name + ", " + this.writer + ", " + this.year;  
-        } 
+        if (this.owner.equals("admin")) {
+            return this.name + ", " + this.writer + ", " + this.year;
+        }
         return this.name + ", " + this.writer + ", " + this.year;
     }
-    public String toStringFree() {
+
+    public String toStringFree() { 
         return this.name + ", " + this.writer + ", " + this.year + ", " + this.copies + " copies available";
     }
 
@@ -64,16 +77,12 @@ public class Book implements Comparable<Book>  {
 //        int hash = 7;
 //        return hash;
 //    }
-
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { 
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
         final Book other = (Book) obj;
@@ -90,10 +99,8 @@ public class Book implements Comparable<Book>  {
     }
 
     @Override
-    public int compareTo(Book o) {
-    return 0;
+    public int compareTo(Book o) { 
+        return 0;
     }
-    
-    
-    
+
 }

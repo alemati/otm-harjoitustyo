@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import domain.User;
 
-public class UserDao implements Dao<User, String>{
+public class UserDao implements Dao<User, String> { 
     
     private String dataBaseName;
 
@@ -31,7 +31,7 @@ public class UserDao implements Dao<User, String>{
         if (!rs.next()) {
             return null;
         }
-        User palautus = new User( rs.getString("name"), rs.getString("pass"));
+        User palautus = new User(rs.getString("name"), rs.getString("pass"));
         stmt.close();
         rs.close();
         conn.close();
@@ -45,7 +45,7 @@ public class UserDao implements Dao<User, String>{
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM User");
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
-            User lisataan = new User( rs.getString("name"), rs.getString("pass"));
+            User lisataan = new User(rs.getString("name"), rs.getString("pass"));
             lista.add(lisataan);
         }
         stmt.close();
@@ -59,7 +59,7 @@ public class UserDao implements Dao<User, String>{
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         List<User> list = findAll();
         for (User user : list) {
-            if(user.getName().equals(object.getName())) {
+            if (user.getName().equals(object.getName())) {
                 return null;
             }
         }

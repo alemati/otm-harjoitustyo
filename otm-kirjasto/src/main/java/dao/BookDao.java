@@ -21,18 +21,18 @@ import domain.User;
  *
  * @author AM
  */
-public class BookDao implements Dao<Book, Integer>{
+public class BookDao implements Dao<Book, Integer> { 
 
     private String dataBaseName;
     
-    public BookDao(String dataBaseName ) {
+    public BookDao(String dataBaseName) {
         this.dataBaseName = dataBaseName;
     }
     
     public int idOfLastBook() throws SQLException {
         List<Book> lista = findAll();
-        if(lista.isEmpty()) {
-          return -1;  
+        if (lista.isEmpty()) {
+            return -1;  
         }
         return lista.get(lista.size() - 1).getId();
     }
@@ -74,7 +74,7 @@ public class BookDao implements Dao<Book, Integer>{
         List<Book> lista = findAll();
         List<Book> list = new ArrayList<>();
         lista.stream().forEach(k -> {
-            if(!k.getOmistaja().equals("admin")) {
+            if (!k.getOmistaja().equals("admin")) {
                 list.add(k);
             }
         });
@@ -130,7 +130,7 @@ public class BookDao implements Dao<Book, Integer>{
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         List<Book> list = findAll();
         for (Book book : list) {
-            if(book.equals(uusiKirja)) {
+            if (book.equals(uusiKirja)) {
                 return null;
             }
         }

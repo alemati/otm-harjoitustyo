@@ -28,8 +28,11 @@ import static javafx.application.Application.launch;
 import javafx.geometry.Pos;
 import javafx.scene.layout.BorderPane;
 import static javafx.application.Application.launch;
+import static javafx.application.Application.launch;
+import static javafx.application.Application.launch;
+import static javafx.application.Application.launch;
 
-public class main extends Application {
+public class Main extends Application {
 
     private static UserDao userDao;
     private static BookDao bookDao;
@@ -80,7 +83,7 @@ public class main extends Application {
             try {
                 resultFromDB = userDao.findByUsername(name);
             } catch (SQLException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (resultFromDB != null && pass.equals(resultFromDB.getPass()) && name.equals("admin")) {
                 mainStage.setScene(createAdminPage(user));
@@ -153,7 +156,7 @@ public class main extends Application {
                 unInput.clear();
                 pwInput.clear();
             } catch (SQLException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         });
@@ -209,7 +212,7 @@ public class main extends Application {
                         bookDao.delete(selectedBook.getId());
                         mainStage.setScene(createAdminPage(user));
                     } catch (SQLException ex) {
-                        Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
                     AlertBox.display("You can't delete this book!", 
@@ -235,24 +238,23 @@ public class main extends Application {
             Label usersText = new Label("List of users (username, password):");
             Label booksText = new Label("List of currently free books:    ");
             
-            HBox aboveBookList = new HBox();
+            HBox aboveBookList = new HBox(); 
+            VBox userBox = new VBox(3); 
+            VBox bookBox = new VBox(3); 
+            aboveBookList.getChildren().addAll(booksText, addBookButton); 
+            userBox.getChildren().addAll(usersText, userList, showUserButton); 
+            bookBox.getChildren().addAll(aboveBookList, bookList, deleteBookButton, addBookButton); 
             
-            VBox userBox = new VBox(3);
-            VBox bookBox = new VBox(3);
-            aboveBookList.getChildren().addAll(booksText,addBookButton);
-            userBox.getChildren().addAll(usersText, userList,showUserButton);
-            bookBox.getChildren().addAll(aboveBookList, bookList, deleteBookButton,addBookButton);
+            firstRow.getChildren().addAll(welcomeText, logoutButton); 
+            secondRow.getChildren().addAll(userBox, bookBox); 
+            thirdRow.getChildren().addAll(allBorrowedBooksButton); 
             
-            firstRow.getChildren().addAll(welcomeText,logoutButton);
-            secondRow.getChildren().addAll(userBox, bookBox);
-            thirdRow.getChildren().addAll(allBorrowedBooksButton);
-            
-            mainVBox.getChildren().addAll(firstRow, secondRow, thirdRow);
+            mainVBox.getChildren().addAll(firstRow, secondRow, thirdRow); 
             
             scene = new Scene(mainVBox, 600, 400);
             return scene;
         } catch (SQLException ex) {
-            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         return scene;
     }
@@ -272,7 +274,7 @@ public class main extends Application {
                 lista1.getItems().add(k);
             });
         } catch (SQLException ex) {
-            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         ListView<Book> lista2 = new ListView<>();
@@ -281,7 +283,7 @@ public class main extends Application {
                 lista2.getItems().add(k);
             });
         } catch (SQLException ex) {
-            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Button borrowButton = new Button("Borrow choosen book");
@@ -291,7 +293,7 @@ public class main extends Application {
                 bookDao.changeOwner(valittuKirja, user);
                 mainStage.setScene(createUserPage(user));
             } catch (SQLException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         });
@@ -303,7 +305,7 @@ public class main extends Application {
                 bookDao.returnBook(valittuKirja);
                 mainStage.setScene(createUserPage(user));
             } catch (SQLException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         });
@@ -360,7 +362,7 @@ public class main extends Application {
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
         Button backButton = new Button("Back");
@@ -387,7 +389,7 @@ public class main extends Application {
                 }
             });
         } catch (SQLException ex) {
-            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         Button deleteButton = new Button("Delete this account");
         deleteButton.setOnAction(e -> {
@@ -401,7 +403,7 @@ public class main extends Application {
                         try {
                             bookDao.delete(k.getId());
                         } catch (SQLException ex) {
-                            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     });
                     userDao.delete(user.getName());
@@ -409,7 +411,7 @@ public class main extends Application {
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
         Button backButton = new Button("Back");
@@ -429,7 +431,7 @@ public class main extends Application {
         try {
             list = bookDao.findAllBorrowed();
         } catch (SQLException ex) {
-            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         list.stream().forEach(k -> {
             Book book = (Book) k;
@@ -440,7 +442,7 @@ public class main extends Application {
         backButton.setOnAction(e -> {
             mainStage.setScene(createAdminPage(new User("d", "v")));
         });
-        layout.getChildren().addAll(text,bookList,backButton);
+        layout.getChildren().addAll(text, bookList, backButton); 
         Scene scene = new Scene(layout, 600, 400);
         return scene;
     }

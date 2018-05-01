@@ -25,12 +25,10 @@ public class ConfirmBox {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
-        window.setMinWidth(250);
-        window.setMinHeight(200);
-        window.setMaxWidth(250);
-        window.setMaxHeight(200);
-        
-        
+//        window.setMinWidth(250);
+//        window.setMinHeight(200);
+//        window.setMaxWidth(250);
+//        window.setMaxHeight(200);
         Label l1 = new Label();
         l1.setText(messege);
         
@@ -48,10 +46,10 @@ public class ConfirmBox {
         });
         
         VBox layout1 = new VBox(20);
-        layout1.getChildren().addAll(l1,but1,but2);
+        layout1.getChildren().addAll(l1, but1, but2); 
         HBox layout2 = new HBox(10);
-        layout2.getChildren().addAll(but1,but2);
-        layout1.getChildren().addAll(layout2);
+        layout2.getChildren().addAll(but1, but2); 
+        layout1.getChildren().addAll(layout2); 
         
         Scene scene1 = new Scene(layout1);
         window.setScene(scene1);

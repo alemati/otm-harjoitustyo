@@ -45,8 +45,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        userDao = new UserDao("database.db");
-        bookDao = new BookDao("database.db");
+        userDao = new UserDao("otmLibraryDatabase.db");
+        bookDao = new BookDao("otmLibraryDatabase.db");
         mainStage = primaryStage;
         Scene scene = createLoginPage();
         mainStage.setScene(scene);

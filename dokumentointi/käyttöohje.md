@@ -8,7 +8,7 @@ java -jar otm-library-1.1.jar
 ## Kirjautuminen kirjaston työntekijänä
 Kirjautuminen onnistuu kahdella tavalla. Tarkistetaan nyt tilannetta jossa järjeltelmään kirjaudutaan krjaston työntekijänä. Saadakseen admin-oikeudet _Username_ kentään pitäisi syötää _admin_ ja Password kentään pitäisi syöttää _1234_  
 
-<img src="https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/kuvat/adminLogin.png" width="600">
+<img src="https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/kuvat/adminLogin.png" width="500">
 
 
 ## Kirjaston työntekijän (admin) mahdollisuudet  

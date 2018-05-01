@@ -37,7 +37,7 @@ generoi hakemistoon _target_ suoritettavan jar-tiedoston _otm-kirjasto-1.0-SNAPS
 
 ### Checkstyle
 
-Tiedostoon [checkstyle.xml](https://github.com/mluukkai/OtmTodoApp/blob/master/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+Tiedostoon [checkstyle.xml](https://github.com/alemati/otm-harjoitustyo/blob/master/otm-kirjasto/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
 
 ```
  mvn jxr:jxr checkstyle:checkstyle

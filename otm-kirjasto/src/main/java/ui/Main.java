@@ -60,6 +60,7 @@ public class Main extends Application {
         gridPane.setPadding(new Insets(10, 10, 10, 10));
         gridPane.setVgap(8);
         gridPane.setHgap(8);
+        gridPane.setHgap(8);
         BorderPane borderpane = new BorderPane();
 
         Label username = new Label("Username: ");

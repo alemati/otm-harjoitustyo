@@ -7,7 +7,7 @@ Pakkaus ui sisältää JavaFX:llä toteutetun käyttöliittymän, domain sovellu
 
 ## Rakenne  
 Käyttöliittymä sisältää kuusi erillistä näkymää  
-⋅⋅* kirjautuminen  
-⋅⋅* uuden käuttäjän luominen  
-⋅⋅* tavallisen käyttäjän sivu  
+* kirjautuminen  
+* uuden käuttäjän luominen  
+* tavallisen käyttäjän sivu  
 

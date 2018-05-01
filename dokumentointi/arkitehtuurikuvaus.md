@@ -6,8 +6,8 @@ Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakka
 Pakkaus ui sisältää JavaFX:llä toteutetun käyttöliittymän, domain sovelluslogiikan ja dao tietojen pysyväistallennuksesta vastaavan koodin.  
 
 ## Rakenne  
-Käyttöliittymä sisältää kuusi erillistä näkymää
-⋅⋅* kirjautuminen
-⋅⋅* uuden käuttäjän luominen
-⋅⋅* tavallisen käyttäjän sivu
+Käyttöliittymä sisältää kuusi erillistä näkymää  
+⋅⋅* kirjautuminen  
+⋅⋅* uuden käuttäjän luominen  
+⋅⋅* tavallisen käyttäjän sivu  
 

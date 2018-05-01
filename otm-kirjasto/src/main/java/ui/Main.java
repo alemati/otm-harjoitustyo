@@ -42,7 +42,12 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    /**
+     * Method creates mainStage that will be used throughout all session and show it.
+     * 
+     * 
+     *
+     */
     @Override
     public void start(Stage primaryStage) {
         userDao = new UserDao("otmLibraryDatabase.db");
@@ -54,6 +59,12 @@ public class Main extends Application {
         mainStage.show();
     }
 
+    /**
+     * Method creates scene for login window. 
+     * 
+     *
+     * @return login scene
+     */
     public static Scene createLoginPage() {
         Label errorMessage = new Label("");
         GridPane gridPane = new GridPane();
@@ -115,7 +126,13 @@ public class Main extends Application {
         Scene scene = new Scene(borderpane, 600, 400);
         return scene;
     }
-
+    
+    /**
+     * Method creates scene that gives opportunity to create new account. 
+     * 
+     *
+     * @return login scene
+     */
     public static Scene createAccountRegistrationPage() {
         BorderPane borderPane = new BorderPane();
         GridPane gridPane = new GridPane();
@@ -176,12 +193,18 @@ public class Main extends Application {
         Scene scene = new Scene(borderPane, 600, 400);
         return scene;
     }
-
+    /**
+     * Method creates scene for admin main window. 
+     * 
+     *
+     * @param user admin object
+     * @return admin main scene
+     */
     public static Scene createAdminPage(User user) {
         Scene scene = new Scene(new HBox());
         try {
             VBox mainVBox = new VBox(10);
-            
+
             Button logoutButton = new Button("Logout");
             logoutButton.setOnAction(e -> {
                 mainStage.setScene(createLoginPage());
@@ -198,7 +221,7 @@ public class Main extends Application {
             bookDao.findAllFree().forEach(k -> {
                 bookList.getItems().add(k);
             });
-            
+
             Button showUserButton = new Button("Show profile of selected user");
             showUserButton.setOnAction(e -> {
                 User selectedUser = userList.getSelectionModel().getSelectedItem();
@@ -216,7 +239,7 @@ public class Main extends Application {
                         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    AlertBox.display("You can't delete this book!", 
+                    AlertBox.display("You can't delete this book!",
                             "Book that you want\nto delete is borrowed!");
                 }
             });
@@ -225,33 +248,33 @@ public class Main extends Application {
             addBookButton.setOnAction(e -> {
                 mainStage.setScene(createBookAdditionPage(user));
             });
-            
+
             Button allBorrowedBooksButton = new Button("Show all borrowed books");
             allBorrowedBooksButton.setOnAction(e -> {
                 mainStage.setScene(createBorrowedBooksPage());
             });
-            
+
             HBox firstRow = new HBox();
             HBox secondRow = new HBox(3);
             HBox thirdRow = new HBox(3);
-            
+
             Label welcomeText = new Label("Yoy are logged in as ADMIN         ");
             Label usersText = new Label("List of users (username, password):");
             Label booksText = new Label("List of currently free books:    ");
-            
-            HBox aboveBookList = new HBox(); 
-            VBox userBox = new VBox(3); 
-            VBox bookBox = new VBox(3); 
-            aboveBookList.getChildren().addAll(booksText, addBookButton); 
-            userBox.getChildren().addAll(usersText, userList, showUserButton); 
-            bookBox.getChildren().addAll(aboveBookList, bookList, deleteBookButton, addBookButton); 
-            
-            firstRow.getChildren().addAll(welcomeText, logoutButton); 
-            secondRow.getChildren().addAll(userBox, bookBox); 
-            thirdRow.getChildren().addAll(allBorrowedBooksButton); 
-            
-            mainVBox.getChildren().addAll(firstRow, secondRow, thirdRow); 
-            
+
+            HBox aboveBookList = new HBox();
+            VBox userBox = new VBox(3);
+            VBox bookBox = new VBox(3);
+            aboveBookList.getChildren().addAll(booksText, addBookButton);
+            userBox.getChildren().addAll(usersText, userList, showUserButton);
+            bookBox.getChildren().addAll(aboveBookList, bookList, deleteBookButton, addBookButton);
+
+            firstRow.getChildren().addAll(welcomeText, logoutButton);
+            secondRow.getChildren().addAll(userBox, bookBox);
+            thirdRow.getChildren().addAll(allBorrowedBooksButton);
+
+            mainVBox.getChildren().addAll(firstRow, secondRow, thirdRow);
+
             scene = new Scene(mainVBox, 600, 400);
             return scene;
         } catch (SQLException ex) {
@@ -259,11 +282,18 @@ public class Main extends Application {
         }
         return scene;
     }
-
+    
+    /**
+     * Method creates personal scene for user in wich user can manage his books. 
+     * 
+     *
+     * @param user user whose personal page method creates
+     * @return user scene
+     */
     public static Scene createUserPage(User user) {
         VBox mainVBox = new VBox(10);
         HBox secondRow = new HBox(8);
-        
+
         Button logoutButton = new Button("Logout");
         logoutButton.setOnAction(e -> {
             mainStage.setScene(createLoginPage());
@@ -310,23 +340,30 @@ public class Main extends Application {
             }
 
         });
-        
+
         Label welcome = new Label(user.getName() + ", welcome to your page!");
         Label yourBooks = new Label("Yours books:");
         Label availabel = new Label("Available books:");
-        
+
         VBox vBoxOwnBooks = new VBox(5);
         VBox vBoxAvailableBooks = new VBox(5);
-        
+
         vBoxOwnBooks.getChildren().addAll(yourBooks, lista2, returnButton);
         vBoxAvailableBooks.getChildren().addAll(availabel, lista1, borrowButton);
-        
+
         secondRow.getChildren().addAll(vBoxOwnBooks, vBoxAvailableBooks);
         mainVBox.getChildren().addAll(welcome, secondRow, logoutButton);
         Scene scene = new Scene(mainVBox, 600, 400);
         return scene;
     }
-
+    
+    /**
+     * Method creates scene for admin to add books into database. 
+     * 
+     *
+     * @param user admin object
+     * @return book addition scene
+     */
     public static Scene createBookAdditionPage(User user) {
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(10, 10, 10, 10));
@@ -377,6 +414,15 @@ public class Main extends Application {
         Scene scene = new Scene(gridPane, 600, 400);
         return scene;
     }
+    
+    /**
+     * Method creates scene for admin to check what books user borrowed and also for deleting user from database.
+     * 
+     * 
+     *
+     * @param user user whoh admin checks
+     * @return book addition scene
+     */
 
     public static Scene createAdminUserPage(User user) {
         Label userInfo = new Label("Username: " + user.getName() + ", password: " + user.getPass());
@@ -424,6 +470,12 @@ public class Main extends Application {
         return scene;
     }
     
+    /**
+     * Method creates scene for admin to check what books are borrowed at current moment.
+     * 
+     * @return all borrowed books scene
+     */
+    
     public static Scene createBorrowedBooksPage() {
         Label text = new Label("List of all borrowed books");
         VBox layout = new VBox(4);
@@ -438,12 +490,12 @@ public class Main extends Application {
             Book book = (Book) k;
             bookList.getItems().add(k.toString() + ", borrowed by " + book.getOmistaja());
         });
-        
+
         Button backButton = new Button("Back");
         backButton.setOnAction(e -> {
             mainStage.setScene(createAdminPage(new User("d", "v")));
         });
-        layout.getChildren().addAll(text, bookList, backButton); 
+        layout.getChildren().addAll(text, bookList, backButton);
         Scene scene = new Scene(layout, 600, 400);
         return scene;
     }

@@ -17,10 +17,25 @@ import domain.User;
 public class UserDao implements Dao<User, String> { 
     
     private String dataBaseName;
-
+    
+    
+    /**
+     * Method tries to find user from database by user's name.
+     * 
+     * 
+     * @param dataBaseName Name of database to which connection is wanted to be done
+     */
     public UserDao(String dataBaseName) {
         this.dataBaseName = dataBaseName;
     }
+    
+    /**
+     * Method tries to find user from database by user's name.
+     * 
+     * 
+     * @param key Username of user that needs to be found
+     * @return either wanted user or null (if there is no such user in database)
+     */
     
     @Override
     public User findByUsername(String key) throws SQLException {
@@ -37,6 +52,12 @@ public class UserDao implements Dao<User, String> {
         conn.close();
         return palautus;
     }
+    
+    /**
+     * Method delete certain user from database.
+     * 
+     * @return List of all users in database
+     */
 
     @Override
     public List<User> findAll() throws SQLException {
@@ -53,7 +74,14 @@ public class UserDao implements Dao<User, String> {
         conn.close();
         return lista;
     }
-
+    
+    /**
+     * Method saves certain user into database if there is no already user with same name in database.
+     * 
+     * 
+     * @param object User that needs to be saven into database
+     * @return null
+     */
     @Override
     public User save(User object) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
@@ -72,7 +100,13 @@ public class UserDao implements Dao<User, String> {
         conn.close();
         return null;
     }
-
+    
+    /**
+     * Method delete certain user from database.
+     * 
+     * 
+     * @param key Username of user that needs to be deleted
+     */
     @Override
     public void delete(String key) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
@@ -82,7 +116,11 @@ public class UserDao implements Dao<User, String> {
         stmt.close();
         conn.close();
     }
-    
+    /**
+     * Method delete all User data from database.
+     * 
+     * 
+     */
     public void deleteAll() throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("DELETE FROM User");

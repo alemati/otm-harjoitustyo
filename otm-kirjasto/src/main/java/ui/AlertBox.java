@@ -17,6 +17,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class AlertBox {
+    
+    /**
+     * Method gives user information about admin account.
+     * 
+     */
 
     public static void display(String title, String messege) {
         Stage window = new Stage();

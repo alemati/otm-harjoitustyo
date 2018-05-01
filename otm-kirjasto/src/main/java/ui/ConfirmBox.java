@@ -20,7 +20,11 @@ import javafx.stage.Stage;
 public class ConfirmBox {
     
     static String vastaus;
-    
+    /**
+     * Method creates popping stage with scene to make sure that admin really wants to delete user.
+     * 
+     * @return decision (in string) either to delete user or not
+     */
     public static String display(String title, String messege) {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);

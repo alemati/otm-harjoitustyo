@@ -19,4 +19,4 @@ noiden lisääksi on vielä kaksi pikku varmistus boxia jotka esintyväät sillo
 
 ## Tietokantarakenne  
 Sovelluksen muisti soveltaa sqlite-tietokantaa. Tietokannassa on kaksi tietokantataulua (User, joka vastaa käyttäjää ja Book, joka vastaa kirjaa). Koko sovellus pyörii näiden kahden tietokantataulun suhteiden välillä.  
-<img src="https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/kuvat/User-Book.png" width="300">  
+<img src="https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/kuvat/User-Book.png" width="500">  

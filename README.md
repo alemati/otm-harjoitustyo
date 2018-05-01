@@ -5,6 +5,9 @@
 [Release](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1)  
 [Arkitehtuurikuvaus](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/arkitehtuurikuvaus.md)  
 
+## Release  
+[Release.Vol.1.1](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1)
+
 ## Komentorivitoiminnot 
 
 ### Testaus

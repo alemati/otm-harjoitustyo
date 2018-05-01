@@ -8,5 +8,5 @@
 | 3.4. | 3 h   | sovelluksen toteuttaminen (kirjojen poisto, käyttäjien poisto) |
 | 10.4. | 1.5 h   | sovelluksen toteuttaminen (ensimmäiset testit) |
 | 30.4. | 5 h   | testi (noin 80%), sovelluksen laajentaminen |
-| 1.5. | 7 h   | realease, arkitehtuurikuvaus(alku), checkstyle(kokonaan) |
+| 1.5. | 7 h   | realease, arkitehtuurikuvaus(alku), checkstyle(kokonaan), javadoc (5 luokkaa) |
 | yht.| 28.5 h   | |

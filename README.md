@@ -1,8 +1,10 @@
 # Kirjastojärjestelmä  
+
 ## Dokumentaatio  
 [Käyttöohje](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/k%C3%A4ytt%C3%B6ohje.md)    
 [Määrittelydokumentti](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)   
 [Arkitehtuurikuvaus](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/arkitehtuurikuvaus.md)  
+[työaikakiejanpito](https://github.com/alemati/otm-harjoitustyo/blob/master/ty%C3%B6aikakirjanpito.md)  
 
 ## Release  
 [Release.Vol.1.1](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1)

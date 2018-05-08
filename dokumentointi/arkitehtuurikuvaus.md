@@ -15,7 +15,7 @@ Käyttöliittymä sisältää kuusi major näkymää jotka ovat toteuttuneet omi
 * luettelo tietyn käyttäjän lanatuista kirjoista    
 * luettelo jokaisesta lainatusta kirjasta  
 
-noiden lisääksi on vielä kaksi pikku varmistus boxia jotka esintyväät silloin kun käyttäjältä halutaan saada vahvistuksen esim. käyttäjän poistossa. Noilla boxeilla on oma Stage olio jonka pitäisi sulkea vastaamalla varmistus kysymykseen.
+noiden lisääksi on vielä kaksi pikku varmistus boxia jotka tulevat näkyviin silloin, kun käyttäjältä halutaan saada vahvistuksen esim. käyttäjän poistossa. Noilla boxeilla on oma Stage olio jonka pitäisi sulkea vastaamalla varmistus kysymykseen.
 
 ## Tietokantarakenne  
 Sovelluksen muisti soveltaa sqlite-tietokantaa. Tietokannassa on kaksi tietokantataulua (User, joka vastaa käyttäjää ja Book, joka vastaa kirjaa). Koko sovellus pyörii näiden kahden tietokantataulun suhteiden välillä.  

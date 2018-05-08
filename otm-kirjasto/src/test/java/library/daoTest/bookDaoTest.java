@@ -1,4 +1,4 @@
-package daoTest;
+package library.daoTest;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -6,11 +6,11 @@ package daoTest;
  * and open the template in the editor.
  */
 
-import domainTest.userTest;
-import dao.BookDao;
-import dao.UserDao;
-import domain.Book;
-import domain.User;
+import library.domainTest.userTest;
+import library.dao.BookDao;
+import library.dao.UserDao;
+import library.domain.Book;
+import library.domain.User;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,7 +59,7 @@ public class bookDaoTest {
     @Test
     public void nonExistingUserIsNotFound() {
         try {
-            Book b1 = bookDao.findByUsername(6);
+            Book b1 = bookDao.findById(6);
             assertNull(b1);
         } catch (SQLException ex) {
             Logger.getLogger(userTest.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,7 +79,7 @@ public class bookDaoTest {
     public void deleteOperationIsWorking() {
         try {
             bookDao.delete(1);
-            Book u = bookDao.findByUsername(1);
+            Book u = bookDao.findById(1);
             assertNull(u);
         } catch (SQLException ex) {
             Logger.getLogger(userTest.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,8 +127,8 @@ public class bookDaoTest {
     @Test
     public void ownerChanging() {
         try {
-            bookDao.changeOwner(bookDao.findByUsername(1), new User("allu", "c"));
-            assertEquals(bookDao.findByUsername(1).getOmistaja(), "allu");
+            bookDao.changeOwner(bookDao.findById(1), new User("allu", "c"));
+            assertEquals(bookDao.findById(1).getOmistaja(), "allu");
         } catch (SQLException ex) {
             Logger.getLogger(userTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -137,8 +137,8 @@ public class bookDaoTest {
     @Test
     public void returning() {
         try {
-            bookDao.returnBook(bookDao.findByUsername(5));
-            assertEquals(bookDao.findByUsername(5).getOmistaja(), "admin");
+            bookDao.returnBook(bookDao.findById(5));
+            assertEquals(bookDao.findById(5).getOmistaja(), "admin");
         } catch (SQLException ex) {
             Logger.getLogger(userTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -147,14 +147,12 @@ public class bookDaoTest {
     @Test
     public void idOfLastBook() {
         try {
-            bookDao.returnBook(bookDao.findByUsername(5));
-            assertEquals(bookDao.findByUsername(1).getOmistaja(), "admin");
+            bookDao.returnBook(bookDao.findById(5));
+            assertEquals(bookDao.findById(1).getOmistaja(), "admin");
             assertSame(5, bookDao.idOfLastBook());
         } catch (SQLException ex) {
             Logger.getLogger(userTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
 
 }

@@ -1,10 +1,10 @@
-package daoTest;
+package library.daoTest;
 
 
-import domainTest.userTest;
-import dao.UserDao;
-import domain.Book;
-import domain.User;
+import library.domainTest.userTest;
+import library.dao.UserDao;
+import library.domain.Book;
+import library.domain.User;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -1,4 +1,4 @@
-package domainTest;
+package library.domainTest;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -6,10 +6,10 @@ package domainTest;
  * and open the template in the editor.
  */
 
-import dao.BookDao;
-import dao.UserDao;
-import domain.Book;
-import domain.User;
+import library.dao.BookDao;
+import library.dao.UserDao;
+import library.domain.Book;
+import library.domain.User;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,5 +63,7 @@ public class bookTest {
         Book b1 = new Book(1, "1", "1", 1);
         assertEquals("1, 1, 1", b1.toString());
     }
+    
+    
  
 }

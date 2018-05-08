@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package library.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,9 +12,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import domain.User;
+import library.domain.User;
 
-public class UserDao implements Dao<User, String> { 
+public class UserDao implements FileUserDao<User, String> { 
     
     private String dataBaseName;
     

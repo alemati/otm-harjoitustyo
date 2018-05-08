@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui;
+package library.ui;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -29,10 +29,10 @@ public class ConfirmBox {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
-//        window.setMinWidth(250);
-//        window.setMinHeight(200);
-//        window.setMaxWidth(250);
-//        window.setMaxHeight(200);
+        window.setMinWidth(250);
+        window.setMinHeight(200);
+        window.setMaxWidth(250);
+        window.setMaxHeight(200);
         Label l1 = new Label();
         l1.setText(messege);
         

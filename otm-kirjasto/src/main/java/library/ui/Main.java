@@ -1,9 +1,9 @@
-package ui;
+package library.ui;
 
-import domain.User;
-import domain.Book;
-import dao.BookDao;
-import dao.UserDao;
+import library.domain.User;
+import library.domain.Book;
+import library.dao.BookDao;
+import library.dao.UserDao;
 import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.io.File;
 import java.sql.SQLException;
@@ -62,8 +62,7 @@ public class Main extends Application {
     /**
      * Method creates scene for login window. 
      * 
-     *
-     * @return login scene
+     *@return login scene
      */
     public static Scene createLoginPage() {
         Label errorMessage = new Label("");
@@ -86,7 +85,7 @@ public class Main extends Application {
         pwInput.setPromptText("password");
         GridPane.setConstraints(pwInput, 1, 1);
 
-        Button logginButton = new Button("Loggin");
+        Button logginButton = new Button("Login");
         logginButton.setOnAction(e -> {
             String name = unInput.getText();
             String pass = pwInput.getText();

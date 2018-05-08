@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package library.domain;
 
 import java.util.Objects;
 
@@ -68,15 +68,6 @@ public class Book implements Comparable<Book> {
         return this.name + ", " + this.writer + ", " + this.year;
     }
 
-    public String toStringFree() { 
-        return this.name + ", " + this.writer + ", " + this.year + ", " + this.copies + " copies available";
-    }
-
-//    @Override
-//    public int hashCode() {
-//        int hash = 7;
-//        return hash;
-//    }
     @Override
     public boolean equals(Object obj) { 
         if (this == obj) {
@@ -99,8 +90,10 @@ public class Book implements Comparable<Book> {
     }
 
     @Override
-    public int compareTo(Book o) { 
-        return 0;
+    public int compareTo(Book o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package library.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,17 +14,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import domain.Book;
-import domain.User;
+import library.domain.Book;
+import library.domain.User;
 
 
-public class BookDao implements Dao<Book, Integer> { 
+public class BookDao implements FileBookDao<Book, Integer> { 
 
     private String dataBaseName;
     
     public BookDao(String dataBaseName) {
         this.dataBaseName = dataBaseName;
     }
+    
     /**
      * Method return id of last book in database (highest id).
      * 
@@ -45,7 +46,7 @@ public class BookDao implements Dao<Book, Integer> {
      * @return either wanted book or null (if there is no book with such id in database)
      */
     @Override
-    public Book findByUsername(Integer key) throws SQLException {
+    public Book findById(Integer key) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:sqlite:" + this.dataBaseName);
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Book WHERE id = ?");
         stmt.setObject(1, key);
@@ -119,16 +120,6 @@ public class BookDao implements Dao<Book, Integer> {
         conn.close();
         return lista;
     }
-    
-//    public long howManyFreeCopiesOf(Book book) {
-//        List all = new ArrayList();
-//        try {
-//            all = findAllFree();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(BookDao.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return all.stream().filter(k -> k.equals(book)).count();
-//    }
     
     
     /**
@@ -239,4 +230,5 @@ public class BookDao implements Dao<Book, Integer> {
         stmt.close();
         conn.close();
     }
+
 }

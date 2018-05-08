@@ -23,7 +23,7 @@ On kaksi eri käyttäjä tyyppiä:
   * pystyy lisätä kirjastojärjestelmään uusia kirjoja
   * pystyy poista kirjastojärjestelmästä kirjoja
   * voi nähdä luettelon järjestelmää käyttävistä asiakkaista
-  * voi nähdä mitä kirjoja on asiakkaan lainassa on juuri nyt
+  * voi nähdä mitä kirjoja on asiakkaan lainassa juuri nyt
   * voi poistaa asiakkaan tilin 
 * tavallinen kirjaston asiakas  
   * voi luoda uniikki tili  

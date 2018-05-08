@@ -9,4 +9,5 @@
 | 10.4. | 1.5 h   | sovelluksen toteuttaminen (ensimmäiset testit) |
 | 30.4. | 5 h   | testi (noin 80%), sovelluksen laajentaminen |
 | 1.5. | 7 h   | realease, arkitehtuurikuvaus(alku), checkstyle(kokonaan), javadoc (5 luokkaa) |
-| yht.| 28.5 h   | |
+| 8.5. | 3 h   | arkitehtuurikuvaus, testidokumentti |
+| yht.| 31.5 h   | |

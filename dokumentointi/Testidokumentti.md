@@ -10,8 +10,7 @@ DAO-luokkien toiminnalisuuden testausta varten on luotu erillinen tietokanta. Se
 Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 94% ja haarautumakattavuus 96%
 
 ## Järjestelmätestaus  
-Sovelluksen järjestelmätestaus on suoritettu manuaalisesti.   
-Kaikki [käyttöohjeessa](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/k%C3%A4ytt%C3%B6ohje.md) esitetyt toimenpiteet on testattu manuaalisesti. Toimiakseen sovellus vaatii sopivan otmLibraryDatabase.db tietokannan, jonka saa ladattua [tästä](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1).  
+Sovelluksen järjestelmätestaus on suoritettu manuaalisesti. Kaikki [käyttöohjeessa](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/k%C3%A4ytt%C3%B6ohje.md) esitetyt toimenpiteet on testattu manuaalisesti. Toimiakseen sovellus vaatii sopivan otmLibraryDatabase.db tietokannan, jonka saa ladattua [tästä](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1).  
 
 ## Sovellukseen jääneet laatuongelmat  
 Toimiakseen sovellus vaatii valmin SQLite tietokannan, joka on nimetty oikein ja jossa on jo luotu tarpellisia tietokantatauluja. Ongelman voisi ratkaistaa luomalla tietokannan ja täytämällä sen sopivilla tietokantatauluilla ohjelman käynnistys hetkellä, jos sopivaa tietokantaa ei löyty heti.

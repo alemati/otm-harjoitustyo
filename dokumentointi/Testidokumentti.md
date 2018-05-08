@@ -13,4 +13,4 @@ Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus o
 Sovelluksen järjestelmätestaus on suoritettu manuaalisesti. Kaikki [käyttöohjeessa](https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/k%C3%A4ytt%C3%B6ohje.md) esitetyt toimenpiteet on testattu manuaalisesti. Toimiakseen sovellus vaatii sopivan otmLibraryDatabase.db tietokannan, jonka saa ladattua [tästä](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1).  
 
 ## Sovellukseen jääneet laatuongelmat  
-Toimiakseen sovellus vaatii valmin SQLite tietokannan, joka on nimetty oikein ja jossa on jo luotu tarpellisia tietokantatauluja. Ongelman voisi ratkaistaa luomalla tietokannan ja täytämällä sen sopivilla tietokantatauluilla ohjelman käynnistys hetkellä, jos sopivaa tietokantaa ei löyty heti.
+Toimiakseen sovellus vaatii valmin SQLite tietokannan, joka on nimetty oikein ja jossa on jo luotu tarpellisia tietokantatauluja. Ongelman voisi ratkaistaa luomalla tietokannan ja täyttämällä sen sopivilla tietokantatauluilla ohjelman käynnistys hetkellä, jos sopivaa tietokantaa ei löyty heti.

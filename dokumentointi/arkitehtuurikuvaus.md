@@ -21,4 +21,7 @@ noiden lisääksi on vielä kaksi pikku varmistus boxia jotka esintyväät sillo
 Sovelluksen muisti soveltaa sqlite-tietokantaa. Tietokannassa on kaksi tietokantataulua (User, joka vastaa käyttäjää ja Book, joka vastaa kirjaa). Koko sovellus pyörii näiden kahden tietokantataulun suhteiden välillä.  
 <img src="https://github.com/alemati/otm-harjoitustyo/blob/master/dokumentointi/kuvat/User-Book.png" width="500"> 
 
+## Ohjelman rakenteeseen jääneet heikkoudet  
+Lähes koko "työ" tehdään luokassa Main, mitä tekee siitä todella suuren verattuna muihin luokiin. Olisi parasta pilkoa Main luokassa esitetty koodi pienimpiin luokkiin. Myös sovelluslogikaa määritellään graafisen käyttöliittymän kanssa yhtäaika (samoissa metodeissa), mitä tekee koodista vaikealukuisen.  
 
+Toimiakseen sovellus vaatii valmin SQLite tietokannan, joka on nimetty oikein ja jossa on jo luotu tarpellisia tietokantatauluja. Ongelman voisi ratkaistaa luomalla tietokannan ja täyttämällä sen sopivilla tietokantatauluilla ohjelman käynnistys hetkellä, jos sopivaa tietokantaa ei löyty heti.

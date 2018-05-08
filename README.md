@@ -8,7 +8,7 @@
 [Työaikakiejanpito](https://github.com/alemati/otm-harjoitustyo/blob/master/ty%C3%B6aikakirjanpito.md)
 
 ## Release  
-[Release.Vol.1.1](https://github.com/alemati/otm-harjoitustyo/releases/tag/otm-library-1.1)
+[loppupalautus](https://github.com/alemati/otm-harjoitustyo/releases/tag/loppupalautus)  
 
 ## Komentorivitoiminnot 
 
